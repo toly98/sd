@@ -9,3 +9,4 @@ import-ipynb
 streamlit
 sklearn
 scipy
+plotly.express
