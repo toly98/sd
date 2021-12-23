@@ -1,0 +1,11 @@
+
+pandas
+numpy 
+matplotlib
+seaborn
+plotly
+sip
+import-ipynb
+streamlit
+sklearn
+scipy
