@@ -7,3 +7,4 @@ plotly
 sip
 import-ipynb
 streamlit
+sklearn.linear_model
