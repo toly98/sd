@@ -35,7 +35,6 @@ if st.button('Predict'):
     with st.spinner("Training ongoing"):
         if predict == 'Streams':
                 streams = app.predict_streams(followers,tempo,duration)
-                streams = app.predict_streams(followers,tempo,duration)
                 st.header(f'Following our predicition algorithm we estimated that {name_song} will reach {round(streams[0])} streams!')
         else:
                 highest_charting = app.predict_highest_charting_position(followers,tempo,duration)
