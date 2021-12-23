@@ -1,0 +1,9 @@
+python3.9
+pandas
+numpy 
+matplotlib
+seaborn
+plotly
+sip
+import-ipynb
+streamlit
