@@ -23,9 +23,9 @@ st.write("(The less information provided the less precise the prediction will be
 
 #inputs
 name_song = st.text_input('Name of the song:',)
-followers = st.number_input("Artist's number of followers: (ex. 4953667)",step=1, value=4953667)
-tempo = st.number_input('Tempo of the song: (ex. 142)',step=1, value=142)
-duration = st.number_input('Duration of the song in ms: (ex. 155453)',step=1, value=155453)
+followers = st.number_input("Artist's number of followers: (ex. 4953667)",step=1, value=4953667, min_value = 0, max_value=100000000)
+tempo = st.number_input('Tempo of the song: (ex. 142)',step=1, value=142, min_value = 0, max_value = 200)
+duration = st.number_input('Duration of the song in ms: (ex. 155453)',step=1, value=155453, min_value = 0)
 
 #    data class
 app = SpotifyApp('spotify_dataset.csv')
@@ -34,6 +34,7 @@ predict = st.selectbox('Select what to predict.',predict_options)
 if st.button('Predict'):
     with st.spinner("Training ongoing"):
         if predict == 'Streams':
+                streams = app.predict_streams(followers,tempo,duration)
                 streams = app.predict_streams(followers,tempo,duration)
                 st.header(f'Following our predicition algorithm we estimated that {name_song} will reach {round(streams[0])} streams!')
         else:
